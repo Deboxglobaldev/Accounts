@@ -24,7 +24,7 @@ if (isset($_POST['AccountName'])) {
 
     $add = inserting('masters."accountNameMaster"', $sql_name, $sql_val);
 
-    if ($add) {
+    if ($add == 'yes') {
         echo "Insert Data Successfully";
     } else {
         echo "Some Error Try Again!";
@@ -32,9 +32,10 @@ if (isset($_POST['AccountName'])) {
 
     // Log the query and result for debugging
     MISuploadlogger($InfoMessage." SQL Query: INSERT INTO masters.\"accountNameMaster\" ($sql_name) VALUES ($sql_val)");
-    if (!$add) {
-        $errorInfo = $db->errorInfo();
-        MISuploadlogger($InfoMessage." SQL Error: ".$errorInfo[2]);
+    if ($add == 'no') {
+        $db = OpenCon();
+        $errorInfo = pg_last_error($db);
+        MISuploadlogger($InfoMessage." SQL Error: ".$errorInfo);
     }
 } else {
     echo "AccountName is required!";

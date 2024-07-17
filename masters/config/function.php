@@ -364,22 +364,24 @@ function checkduplicateentry($tablename,$select,$where)
 	return  'no';
 	}
 }
-function inserting($tablename,$name,$values)
-{
+function inserting($tablename, $name, $values) {
     $InfoMessage = "[Info] - File location ".$_SERVER['PHP_SELF']." Message:- " ;
 
     $sql_val = 'VALUES('.$values.')';
-	$result = 'INSERT INTO '.$tablename.'('.$name.')'.$sql_val.'';
+    $result = 'INSERT INTO '.$tablename.'('.$name.') '.$sql_val;
     MISuploadlogger($InfoMessage."Query for inserting - ".$result);
 
-	$sql_ins = pg_query(OpenCon(), $result) ;
-	if($sql_ins=='TRUE')
-	{
-	return  'yes';
-	} else {
-	return  'no';
-	}
+    $db = OpenCon();
+    $sql_ins = pg_query($db, $result);
+    if ($sql_ins) {
+        return 'yes';
+    } else {
+        $errorInfo = pg_last_error($db);
+        MISuploadlogger($InfoMessage." SQL Error: ".$errorInfo);
+        return 'no';
+    }
 }
+
 function updatelisting($tablename,$name,$values,$where)
 {
     $sql_val = '('.$values.')';
