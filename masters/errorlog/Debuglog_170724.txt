@@ -1,0 +1,6 @@
+54.86.50.139	17-07-2024 10:31:05 AM	Entering in Account Group Page54.86.50.139	17-07-2024 10:31:05 AM	{
+    "name" : "",
+    "accountGroup" : "",
+    "status" : ""
+}54.86.50.139	17-07-2024 10:31:05 AM	Query to extract the records-----
+SELECT * FROM masters."accountGroupMaster" WHERE true   ORDER BY "Id" ASC
