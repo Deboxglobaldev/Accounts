@@ -1,6 +1,6 @@
 <?php
 
-include "inc.php"; 
+include "inc.php";
 
 MISuploadlogger("Entering in Account Group Page");
 
@@ -24,7 +24,6 @@ class clsDataTable
   public $SubGroupId;
   public $GroupType;
   public $Status;
-
 }
 
 $arrayDataRows = array();
@@ -42,7 +41,7 @@ $DataEntryQuery = str_replace("_name",$accountName!=''?" and UPPER(\"accountName
 $DataEntryQuery = str_replace("_status",$status!=''?" and \"status\"='".$status."' ":"",$DataEntryQuery );
 
 
-MISuploadlogger("Query to extract the records-----\n".$DataEntryQuery);    
+MISuploadlogger("Query to extract the records-----\n".$DataEntryQuery);
 
 $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
 
@@ -57,7 +56,7 @@ $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
      $objDataTable->SubGroupId =$dataList['subGroupId'];
      $objDataTable->GroupType =$dataList['groupType'];
      $objDataTable->Status =$dataList['status'];
-     
+
      $a = array_push($arrayDataRows,$objDataTable);
 
      $i++;
