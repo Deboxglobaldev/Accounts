@@ -31,7 +31,7 @@ $arrayDataRows = array();
 
 // ////---------------------- Extraction from DataBase --------------------------------
 
-$DataEntryQuery = "SELECT * FROM panprogres.\"accountNameMaster\" WHERE true _status _accGrp _name _ntaccGrp ORDER BY \"SubLedgerId\" ASC";
+$DataEntryQuery = "SELECT * FROM masters.\"accountNameMaster\" WHERE true _status _accGrp _name _ntaccGrp ORDER BY \"SubLedgerId\" ASC";
 
 $DataEntryQuery = str_replace("_accGrp",$groupId!=''?" and \"subGroupId\"='".$groupId."' ":"",$DataEntryQuery );
 
