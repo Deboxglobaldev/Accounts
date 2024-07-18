@@ -808,7 +808,7 @@ return "";
 
 function getSubGroupName($groupId){
 
-$DataEntryQuery = "SELECT \"Name\" FROM panprogres.\"accountSubGroupMaster\" WHERE \"LedgerId\"='_gid'";
+$DataEntryQuery = "SELECT \"Name\" FROM masters.\"accountSubGroupMaster\" WHERE \"LedgerId\"='_gid'";
 
 $DataEntryQuery =str_replace('_gid',$groupId,$DataEntryQuery);
 

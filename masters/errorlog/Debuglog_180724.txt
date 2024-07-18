@@ -1,0 +1,13 @@
+::1	18-07-2024 12:01:16 AM	::1	18-07-2024 12:01:16 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC::1	18-07-2024 12:02:46 AM	::1	18-07-2024 12:02:46 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC::1	18-07-2024 12:03:50 AM	::1	18-07-2024 12:03:50 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC::1	18-07-2024 12:04:17 AM	::1	18-07-2024 12:04:17 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC::1	18-07-2024 12:04:27 AM	::1	18-07-2024 12:04:27 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC::1	18-07-2024 12:05:11 AM	::1	18-07-2024 12:05:11 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC::1	18-07-2024 12:08:53 AM	::1	18-07-2024 12:08:53 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC::1	18-07-2024 12:09:40 AM	::1	18-07-2024 12:09:40 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC::1	18-07-2024 12:10:12 AM	::1	18-07-2024 12:10:12 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC::1	18-07-2024 12:10:29 AM	::1	18-07-2024 12:10:29 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC::1	18-07-2024 12:11:56 AM	::1	18-07-2024 12:11:56 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC::1	18-07-2024 12:14:48 AM	::1	18-07-2024 12:14:48 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC
