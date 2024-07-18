@@ -94,4 +94,14 @@ SELECT * FROM masters."accountNameMaster" WHERE true    and UPPER("accountName")
     "name": "Debox",
     "accountGroup": ""
 }::1	18-07-2024 11:41:50 AM	Query to extract the records-----
-SELECT * FROM masters."accountGroupMaster" WHERE true   and UPPER("Name") LIKE '%DEBOX%'  ORDER BY "Id" ASC
+SELECT * FROM masters."accountGroupMaster" WHERE true   and UPPER("Name") LIKE '%DEBOX%'  ORDER BY "Id" ASC::1	18-07-2024 03:20:40 PM	Entering in Account Sub Group Page::1	18-07-2024 03:20:40 PM	{
+    "Name":"Sample",
+    "GroupId":"1"
+
+}::1	18-07-2024 03:20:40 PM	Query to extract the records-----
+SELECT * FROM masters."accountSubGroupMaster" WHERE true   and UPPER("Name") LIKE '%SAMPLE%'  ORDER BY "LedgerId" ASC::1	18-07-2024 03:21:10 PM	Entering in Account Sub Group Page::1	18-07-2024 03:21:10 PM	{
+    "Name":"",
+    "GroupId":"1"
+
+}::1	18-07-2024 03:21:10 PM	Query to extract the records-----
+SELECT * FROM masters."accountSubGroupMaster" WHERE true   ORDER BY "LedgerId" ASC

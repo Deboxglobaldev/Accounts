@@ -793,7 +793,7 @@ return false;
 
 function getGroupName($groupId){
 
-$DataEntryQuery = "SELECT \"Name\" FROM panprogres.\"accountGroupMaster\" WHERE \"Id\"='_gid'";
+$DataEntryQuery = "SELECT \"Name\" FROM masters.\"accountGroupMaster\" WHERE \"Id\"='_gid'";
 
 $DataEntryQuery =str_replace('_gid',$groupId,$DataEntryQuery);
 
