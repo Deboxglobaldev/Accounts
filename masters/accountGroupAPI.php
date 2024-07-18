@@ -47,7 +47,7 @@ $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
      $objDataTable->Number =$i;
      $objDataTable->Id =$dataList['Id'];
      $objDataTable->Name =$dataList['Name'];
-     //$objDataTable->TypeName =getTypeName($dataList['TypeId']);
+     $objDataTable->TypeName =getTypeName($dataList['TypeId']);
      $objDataTable->TypeId =$dataList['TypeId'];
 
      $a = array_push($arrayDataRows,$objDataTable);

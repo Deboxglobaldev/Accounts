@@ -10,4 +10,88 @@ SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" 
 SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC::1	18-07-2024 12:10:29 AM	::1	18-07-2024 12:10:29 AM	Query to extract the records-----
 SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC::1	18-07-2024 12:11:56 AM	::1	18-07-2024 12:11:56 AM	Query to extract the records-----
 SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC::1	18-07-2024 12:14:48 AM	::1	18-07-2024 12:14:48 AM	Query to extract the records-----
-SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC
+SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC::1	18-07-2024 10:43:17 AM	Entering in Account Group Page::1	18-07-2024 10:43:17 AM	::1	18-07-2024 10:43:17 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC::1	18-07-2024 10:54:59 AM	Entering in Account Group Page::1	18-07-2024 10:54:59 AM	----------------------------413206100575341275577670
+Content-Disposition: form-data; name="_status"
+
+1
+----------------------------413206100575341275577670--
+::1	18-07-2024 10:54:59 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC::1	18-07-2024 10:55:52 AM	Entering in Account Group Page::1	18-07-2024 10:55:52 AM	----------------------------870832657144628040849679
+Content-Disposition: form-data; name="_name"
+
+Test Name
+----------------------------870832657144628040849679--
+::1	18-07-2024 10:55:52 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC::1	18-07-2024 11:08:56 AM	Entering in Account Group Page::1	18-07-2024 11:08:56 AM	::1	18-07-2024 11:11:03 AM	Entering in Account Group Page::1	18-07-2024 11:11:03 AM	----------------------------985365864993659615470436
+Content-Disposition: form-data; name="_name"
+
+Test Name
+----------------------------985365864993659615470436--
+::1	18-07-2024 11:18:27 AM	Entering in Account Group Page::1	18-07-2024 11:18:27 AM	{
+    "AccountName": "Test Name",
+    "GroupId": "",
+    "notGroupId": "",
+    "Status": ""
+}
+::1	18-07-2024 11:18:27 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true    and UPPER("accountName") LIKE '%TEST NAME%'   ORDER BY "SubLedgerId" ASC::1	18-07-2024 11:18:36 AM	Entering in Account Group Page::1	18-07-2024 11:18:36 AM	{
+    "AccountName": "Test Name",
+    "GroupId": "",
+    "notGroupId": "",
+    "Status": ""
+}
+::1	18-07-2024 11:18:36 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true    and UPPER("accountName") LIKE '%TEST NAME%'   ORDER BY "SubLedgerId" ASC::1	18-07-2024 11:19:06 AM	Entering in Account Group Page::1	18-07-2024 11:19:06 AM	{
+    "AccountName": "",
+    "GroupId": "",
+    "notGroupId": "",
+    "Status": ""
+}
+::1	18-07-2024 11:19:06 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC::1	18-07-2024 11:21:10 AM	[Info] - File location /Accounts/masters/addAccountNameAPI.php Message:- At beginning of API Call::1	18-07-2024 11:21:10 AM	[Info] - File location /Accounts/masters/addAccountNameAPI.php Message:- Query for inserting - INSERT INTO masters."accountNameMaster"("accountName","subGroupId","status","SubLedgerId") VALUES('Sample','5','0','SLB0004')::1	18-07-2024 11:21:12 AM	[Info] - File location /Accounts/masters/addAccountNameAPI.php Message:-  SQL Query: INSERT INTO masters."accountNameMaster" ("accountName","subGroupId","status","SubLedgerId") VALUES ('Sample','5','0','SLB0004')::1	18-07-2024 11:21:17 AM	Entering in Account Group Page::1	18-07-2024 11:21:17 AM	{
+    "AccountName": "",
+    "GroupId": "",
+    "notGroupId": "",
+    "Status": ""
+}
+::1	18-07-2024 11:21:17 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true     ORDER BY "SubLedgerId" ASC::1	18-07-2024 11:21:52 AM	Entering in Account Group Page::1	18-07-2024 11:21:52 AM	{
+    "AccountName": "",
+    "GroupId": "5",
+    "notGroupId": "",
+    "Status": ""
+}
+::1	18-07-2024 11:21:52 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true   and "subGroupId"='5'    ORDER BY "SubLedgerId" ASC::1	18-07-2024 11:22:12 AM	Entering in Account Group Page::1	18-07-2024 11:22:12 AM	{
+    "AccountName": "",
+    "GroupId": "",
+    "notGroupId": "",
+    "Status": "0"
+}
+::1	18-07-2024 11:22:12 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true  and "status"='0'     ORDER BY "SubLedgerId" ASC::1	18-07-2024 11:28:53 AM	[Info] - File location /Accounts/masters/addAccountGroupAPI.php Message:- At begining of API Call::1	18-07-2024 11:28:53 AM	[Info] - File location /Accounts/masters/addAccountGroupAPI.php Message:- Query for inserting - INSERT INTO masters."accountGroupMaster"("TypeId","Name") VALUES('5','Sample')::1	18-07-2024 11:33:18 AM	Entering in Account Group Page::1	18-07-2024 11:33:18 AM	::1	18-07-2024 11:33:18 AM	Query to extract the records-----
+SELECT * FROM masters."accountGroupMaster" WHERE true   ORDER BY "Id" ASC::1	18-07-2024 11:38:26 AM	Entering in Account Group Page::1	18-07-2024 11:38:26 AM	{
+    "Name": "",
+    "accountGroup": "5"
+}::1	18-07-2024 11:38:26 AM	Query to extract the records-----
+SELECT * FROM masters."accountGroupMaster" WHERE true  and "TypeId"='5'   ORDER BY "Id" ASC::1	18-07-2024 11:38:47 AM	Entering in Account Group Page::1	18-07-2024 11:38:47 AM	{
+    "Name": "debox",
+    "accountGroup": ""
+}::1	18-07-2024 11:38:47 AM	Query to extract the records-----
+SELECT * FROM masters."accountGroupMaster" WHERE true   ORDER BY "Id" ASC::1	18-07-2024 11:39:04 AM	Entering in Account Group Page::1	18-07-2024 11:39:04 AM	{
+    "Name": "Debox",
+    "accountGroup": ""
+}::1	18-07-2024 11:39:04 AM	Query to extract the records-----
+SELECT * FROM masters."accountGroupMaster" WHERE true   ORDER BY "Id" ASC::1	18-07-2024 11:41:03 AM	Entering in Account Group Page::1	18-07-2024 11:41:03 AM	{
+    "AccountName": "Sample",
+    "GroupId": "",
+    "notGroupId": "",
+    "Status": ""
+}
+::1	18-07-2024 11:41:03 AM	Query to extract the records-----
+SELECT * FROM masters."accountNameMaster" WHERE true    and UPPER("accountName") LIKE '%SAMPLE%'   ORDER BY "SubLedgerId" ASC::1	18-07-2024 11:41:50 AM	Entering in Account Group Page::1	18-07-2024 11:41:50 AM	{
+    "name": "Debox",
+    "accountGroup": ""
+}::1	18-07-2024 11:41:50 AM	Query to extract the records-----
+SELECT * FROM masters."accountGroupMaster" WHERE true   and UPPER("Name") LIKE '%DEBOX%'  ORDER BY "Id" ASC
