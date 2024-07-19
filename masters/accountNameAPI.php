@@ -18,7 +18,8 @@ $status = $dataToExport->Status;
 class clsDataTable
 {
 
-  public $Id;
+  // public $Id;
+  public $SubLedgerId;
   public $AccountName;
   public $SubGroupName;
   public $SubGroupId;
@@ -50,7 +51,7 @@ $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
 
      $objDataTable = new clsDataTable();
 
-     $objDataTable->Id =$dataList['SubLedgerId'];
+     $objDataTable->SubLedgerId =$dataList['SubLedgerId'];
      $objDataTable->AccountName =$dataList['accountName'];
      $objDataTable->SubGroupName =getSubGroupName($dataList['subGroupId']);
      $objDataTable->SubGroupId =$dataList['subGroupId'];
@@ -61,10 +62,12 @@ $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
 
      $i++;
 
+     $total = count($arrayDataRows);
+
   }
 
 
 
-echo json_encode(['status'=>0,'AccountNameData'=>$arrayDataRows],JSON_PRETTY_PRINT);
+echo json_encode(['status'=>0,'Total'=>$total,'AccountNameData'=>$arrayDataRows],JSON_PRETTY_PRINT);
 
 ?>

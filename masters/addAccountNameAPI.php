@@ -3,12 +3,23 @@ include "inc.php";
 $InfoMessage = "[Info] - File location ".$_SERVER['PHP_SELF']." Message:- ";
 MISuploadlogger($InfoMessage."At beginning of API Call");
 
-// Add branch basic information
-if (isset($_POST['AccountName'])) {
+$request_body = file_get_contents('php://input');
+$data = json_decode($request_body, true);
 
-    $accountName = $_POST['AccountName'];
-    $subGroupId = $_POST['GroupId'];
-    $status = $_POST['Status'];
+$validates = ['AccountName'];
+foreach ($validates as $validate) {
+    if (!isset($data[$validate]) || empty($data[$validate])) {
+        echo json_encode(array('Error' => $validate . ' is required'));
+        exit();
+    }
+}
+
+// Add branch basic information
+if (isset($data['AccountName'])) {
+
+    $accountName = $data['AccountName'];
+    $subGroupId = $data['GroupId'];
+    $status = $data['Status'];
 
     // Validate accountName
     if (preg_match('/^\d{5}$|^\d{7}$/', $accountName)) {
@@ -25,9 +36,9 @@ if (isset($_POST['AccountName'])) {
     $add = inserting('masters."accountNameMaster"', $sql_name, $sql_val);
 
     if ($add == 'yes') {
-        echo "Insert Data Successfully";
+        echo json_encode(['Status' => 1, 'Message' =>'Insert Data Successfully!']);
     } else {
-        echo "Some Error Try Again!";
+        echo json_encode(['Status' => 0, 'Message' =>'Some Error Try Again!']);
     }
 
     // Log the query and result for debugging

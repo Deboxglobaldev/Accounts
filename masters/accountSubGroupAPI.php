@@ -17,10 +17,11 @@ class clsDataTable
 {
 
   public $Number;
-  public $Id;
+  // public $Id;
   public $Name;
   public $GroupName;
   public $GroupId;
+  public $LedgerId;
 }
 
 $arrayDataRows = array();
@@ -44,7 +45,7 @@ $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
      $objDataTable = new clsDataTable();
 
      $objDataTable->Number =$i;
-     $objDataTable->Id =$dataList['LedgerId'];
+     $objDataTable->LedgerId =$dataList['LedgerId'];
      $objDataTable->Name =$dataList['Name'];
      $objDataTable->GroupName =getGroupName($dataList['GroupId']);
      $objDataTable->GroupId =$dataList['GroupId'];
@@ -53,8 +54,10 @@ $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
 
      $i++;
 
+     $total = count($arrayDataRows);
+
   }
   
-echo json_encode(['status'=>0,'AccountSubGroupData'=>$arrayDataRows],JSON_PRETTY_PRINT);
+echo json_encode(['status'=>0,'Total'=>$total,'AccountSubGroupData'=>$arrayDataRows],JSON_PRETTY_PRINT);
 
 ?>
