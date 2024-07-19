@@ -20,14 +20,7 @@ if(isset($data['Name']))
 
   $accountGroup = $data['GroupId'];
   $name = $data['Name'];
-
-  	if (preg_match('/^\d{5}$|^\d{7}$/', $accountGroup)) {
-	$LedgerId = "LB".$accountGroup;
-	} else {
-	$n = GetAccSequence();
-	$n2 = str_pad($n, 4, '0', STR_PAD_LEFT); 
-	$LedgerId = "LB".$n2;
-	}
+  $LedgerId = $data['LedgerId'];
 
 	$sql_name = '"Name","GroupId","LedgerId"';
 	$sql_val = "'".$name."','".$accountGroup."','".$LedgerId."'";
