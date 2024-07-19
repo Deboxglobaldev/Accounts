@@ -56,8 +56,8 @@ $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
 
   }
 
+  $totalRecords = count($arrayDataRows);
 
-
-echo json_encode(['status'=>0,'AccountGroupData'=>$arrayDataRows],JSON_PRETTY_PRINT);
+  echo json_encode(['status' => 0, 'totalRecords' => $totalRecords, 'AccountGroupData' => $arrayDataRows], JSON_PRETTY_PRINT);
 
 ?>
