@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 ob_start();
 ini_set('post_max_size', '10M');
@@ -16,18 +16,18 @@ function GetSequeceNoOftheDay()
 		$contents = file_get_contents('SequenceNo.txt');
 		MISuploadlogger("Content of function at opening".$contents);
 		$libData = explode("^",$contents);
-		
+
 		$sequenceNo=intval($libData[1]);
-		
+
 			$sequenceNo++;
 
 			$returnval=$sequenceNo;
-	
+
 	}
 	$contents=date("dmY")."^".strval($sequenceNo);
 	MISuploadlogger("Content of function".$contents);
 	file_put_contents ('SequenceNo.txt',$contents);
-	
+
 	return $returnval;
 
 }
@@ -41,15 +41,15 @@ function GetsequenceOftheDay()
 		$contents = file_get_contents('accountSequence.txt');
 
 		$sequenceNo=$contents;
-		
+
 			$sequenceNo++;
 
 			$returnval=$sequenceNo;
-	
+
 	}
 	$contents=strval($sequenceNo);
 	file_put_contents ('accountSequence.txt',$contents);
-	
+
 	return $returnval;
 
 }
@@ -63,15 +63,15 @@ function GetComSequenceOftheDay()
 		$contents = file_get_contents('ComSequence.txt');
 
 		$sequenceNo=$contents;
-		
+
 			$sequenceNo++;
 
 			$returnval=$sequenceNo;
-	
+
 	}
 	$contents=strval($sequenceNo);
 	file_put_contents ('ComSequence.txt',$contents);
-	
+
 	return $returnval;
 
 }
@@ -85,15 +85,15 @@ function GetRecSequenceOftheDay()
 		$contents = file_get_contents('RecSequence.txt');
 
 		$sequenceNo=$contents;
-		
+
 			$sequenceNo++;
 
 			$returnval=$sequenceNo;
-	
+
 	}
 	$contents=strval($sequenceNo);
 	file_put_contents ('RecSequence.txt',$contents);
-	
+
 	return $returnval;
 
 }
@@ -107,15 +107,15 @@ function GetVoucherSequenceOftheDay()
 		$contents = file_get_contents('VoucherSequence.txt');
 
 		$sequenceNo=$contents;
-		
+
 			$sequenceNo++;
 
 			$returnval=$sequenceNo;
-	
+
 	}
 	$contents=strval($sequenceNo);
 	file_put_contents ('VoucherSequence.txt',$contents);
-	
+
 	return $returnval;
 
 }
@@ -129,15 +129,15 @@ function GetBRSequenceOftheDay()
 		$contents = file_get_contents('BRSequence.txt');
 
 		$sequenceNo=$contents;
-		
+
 			$sequenceNo++;
 
 			$returnval=$sequenceNo;
-	
+
 	}
 	$contents=strval($sequenceNo);
 	file_put_contents ('BRSequence.txt',$contents);
-	
+
 	return $returnval;
 
 }
@@ -151,15 +151,15 @@ function GetBPSequenceOftheDay()
 		$contents = file_get_contents('BPSequence.txt');
 
 		$sequenceNo=$contents;
-		
+
 			$sequenceNo++;
 
 			$returnval=$sequenceNo;
-	
+
 	}
 	$contents=strval($sequenceNo);
 	file_put_contents ('BPSequence.txt',$contents);
-	
+
 	return $returnval;
 
 }
@@ -174,15 +174,15 @@ function GetCVSequenceOftheDay()
 		$contents = file_get_contents('CVSequence.txt');
 
 		$sequenceNo=$contents;
-		
+
 			$sequenceNo++;
 
 			$returnval=$sequenceNo;
-	
+
 	}
 	$contents=strval($sequenceNo);
 	file_put_contents ('CVSequence.txt',$contents);
-	
+
 	return $returnval;
 
 }
@@ -196,15 +196,15 @@ function GetVISequenceOftheDay()
 		$contents = file_get_contents('VISequence.txt');
 
 		$sequenceNo=$contents;
-		
+
 			$sequenceNo++;
 
 			$returnval=$sequenceNo;
-	
+
 	}
 	$contents=strval($sequenceNo);
 	file_put_contents ('VISequence.txt',$contents);
-	
+
 	return $returnval;
 
 }
@@ -218,15 +218,15 @@ function GetBillSequenceOftheDay()
 		$contents = file_get_contents('BillSequence.txt');
 
 		$sequenceNo=$contents;
-		
+
 			$sequenceNo++;
 
 			$returnval=$sequenceNo;
-	
+
 	}
 	$contents=strval($sequenceNo);
 	file_put_contents ('BillSequence.txt',$contents);
-	
+
 	return $returnval;
 
 }
@@ -240,15 +240,15 @@ function GetCommissionSequenceOftheDay()
 		$contents = file_get_contents('CommissionSequence.txt');
 
 		$sequenceNo=$contents;
-		
+
 			$sequenceNo++;
 
 			$returnval=$sequenceNo;
-	
+
 	}
 	$contents=strval($sequenceNo);
 	file_put_contents ('CommissionSequence.txt',$contents);
-	
+
 	return $returnval;
 
 }
@@ -263,16 +263,16 @@ function GetFromRange()
 		$contents = file_get_contents('SequenceNo.txt');
 		MISuploadlogger("Content of function at opening".$contents);
 		$libData = explode("^",$contents);
-		
+
 		$sequenceNo=intval($libData[1]);
-		
+
 			$returnval=$sequenceNo;
-	
+
 	}
 	$contents=date("dmY")."^".strval($sequenceNo);
 	MISuploadlogger("Content of function".$contents);
 	file_put_contents ('SequenceNo.txt',$contents);
-	
+
 	return $returnval;
 
 }
@@ -287,19 +287,19 @@ function GetToRange($range)
 		$contents = file_get_contents('SequenceNo.txt');
 		MISuploadlogger("Content of function at opening".$contents);
 		$libData = explode("^",$contents);
-		
+
 		$sequenceNo=intval($libData[1]);
 
-		$sequenceNo += $range; 
-		
+		$sequenceNo += $range;
+
 
 			$returnval=$sequenceNo;
-	
+
 	}
 	$contents=date("dmY")."^".strval($sequenceNo);
 	MISuploadlogger("Content of function".$contents);
 	file_put_contents ('SequenceNo.txt',$contents);
-	
+
 	return $returnval;
 
 }
@@ -309,13 +309,13 @@ function MISuploadlogger($errorlog)
 	$newfile = 	'errorlog/Debuglog_'.date('dmy').'.txt';
 
 	//rename('errorlog/miserrorlog.txt',$newfile);
-  
+
 	if(!file_exists($newfile))
 	{
 	  file_put_contents($newfile,'');
 	}
 	$logfile=fopen($newfile,'a');
-	
+
 	$ip = $_SERVER['REMOTE_ADDR'];
 	date_default_timezone_set('Asia/Kolkata');
 	$time = date('d-m-Y h:i:s A',time());
@@ -330,14 +330,14 @@ function MISuploadlogger_new($errorlog)
 	$newfile = 	'errorlog/MISUploadData_'.date('dmy').'.txt';
 
 	//rename('errorlog/miserrorlog.txt',$newfile);
-  
+
 	if(!file_exists($newfile))
 	{
 	  file_put_contents($newfile,'');
 	}
 	$logfile=fopen($newfile,'a');
 
-	
+
 	$ip = $_SERVER['REMOTE_ADDR'];
 	date_default_timezone_set('Asia/Kolkata');
 	$time = date('d-m-Y h:i:s A',time());
@@ -348,22 +348,24 @@ function MISuploadlogger_new($errorlog)
 }
 
 
-function checkduplicateentry($tablename,$select,$where)
+function checkduplicateentry($tablename, $select, $value)
 {
 	$InfoMessage = "[Info] - File location ".$_SERVER['PHP_SELF']." Message:- " ;
-   
 
-	$result = 'SELECT "'.$select.'" FROM '.$tablename.' WHERE '.$where.'';
-             MISuploadlogger($InfoMessage."Query for CheckDupliicate - ".$result);
-	$checkdublicate = pg_query(OpenCon(), $result);
-	$numrows = pg_num_rows($checkdublicate);
-	if($numrows>0)
-	{
-	return  'yes';
-	} else {
-	return  'no';
-	}
+
+	$where = '"' . $select . '" = \'' . $value . '\'';
+
+    $result = 'SELECT "' . $select . '" FROM ' . $tablename . ' WHERE ' . $where;
+    MISuploadlogger($InfoMessage . "Query for CheckDupliicate - " . $result);
+    $checkdublicate = pg_query(OpenCon(), $result);
+    $numrows = pg_num_rows($checkdublicate);
+    if ($numrows > 0) {
+        return 'yes';
+    } else {
+        return 'no';
+    }
 }
+
 function inserting($tablename, $name, $values) {
     $InfoMessage = "[Info] - File location ".$_SERVER['PHP_SELF']." Message:- " ;
 
@@ -412,11 +414,11 @@ function ListProbleString($problemString)
 				."\n================================================================================\n"
 				 .$problemString
 				."\n-------------------------------------------------------------------------------\n\n";
-				
+
 	$contents = file_get_contents($newfile);
 	$contents .= $StringToWrite;
 	file_put_contents($newfile,$contents);
-	
+
 
 }
 
@@ -429,8 +431,8 @@ function findWrongString($myrecord,$startpos,&$prblemString)
 	$sql_name='';
 	$sql_val='';
 	$query='';
-	
-	
+
+
 	$activityLog="";
 	$effectedRow=0;
 	for($i=0; $i<$TotalUpload; $i++)
@@ -442,25 +444,25 @@ function findWrongString($myrecord,$startpos,&$prblemString)
 			$akno = $MyMisData[2];
 			$catego = $MyMisData[15];
 			$formtype =  $MyMisData[12];
-	
+
 			$MString=$myrecord[$i]."\n";
 			$activityLog = $akno."^".$UserName."^F~DGP~DE1~DU^".date('Y-m-d H:i:s');
 			$sql_name = '"AKNOWLEDGEMENT-NO","APPLICANT-CATEGORY","FORM-TYPE","NSDL-PAN-MIS-STRING","ACTIVITY-LOG"';
 			$sql_val = "'".$akno."','".$catego."','".$formtype."','".str_replace("'","''",$myrecord[$i])."','".$activityLog."'";
 			$query = ' Insert into panprogres."tbl_pan_master" ('.$sql_name.') Values ('.$sql_val.')'.' ON CONFLICT ("AKNOWLEDGEMENT-NO") DO NOTHING;';
-		
-			
-	
+
+
+
 				$misinsert = pg_query(OpenCon(),$query);
 				$effectedRow+=pg_affected_rows($misinsert);
-				$dberror = pg_last_error(OpenCon()); 
-				
-				
+				$dberror = pg_last_error(OpenCon());
+
+
 					if ($dberror != null || trim($dberror)!="")
 					{
 						MISuploadlogger_new("[ERROR] -- "
 											 ."============================================================================================== \n"
-											.$query 
+											.$query
 											."\n\r-------------------------------------------------------------------------------------------\n "
 											.$dberror
 											."\n---------------------------------------------------------------------------------------------\n"
@@ -469,21 +471,21 @@ function findWrongString($myrecord,$startpos,&$prblemString)
 											.$MString
 											."+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
 											);
-						
+
 						$prblemString.=$MString;
-						
+
 
 					}
 					else
 					{
 						$j++;
-						MISuploadlogger_new("[INFO] -- Record Processed  -- " .($i+$j). " out of  ".($TotalUpload+$j)."   Successfull Records ". $j ." out of " .($i+$j) );	
+						MISuploadlogger_new("[INFO] -- Record Processed  -- " .($i+$j). " out of  ".($TotalUpload+$j)."   Successfull Records ". $j ." out of " .($i+$j) );
 					}
-					
-				
+
+
 				$query="";
 				$MString="";
-			
+
 		}
 	}
 	if (trim($prblemString)!="")
@@ -502,8 +504,8 @@ function findWrongStringTan($myrecord,$startpos,&$prblemString)
 	$sql_name='';
 	$sql_val='';
 	$query='';
-	
-	
+
+
 	$activityLog="";
 	$effectedRow=0;
 	for($i=0; $i<$TotalUpload; $i++)
@@ -519,27 +521,27 @@ function findWrongStringTan($myrecord,$startpos,&$prblemString)
 		if(trim($formtypecheck) == 'N'){
 		$formtype = '49B';
 		}else{
-		$formtype = 'CR';	
+		$formtype = 'CR';
 		}
-	
+
 			$MString=$myrecord[$i]."\n";
 			$activityLog = $akno."^".$UserName."^F~DGP~DE1~DU^".date('Y-m-d H:i:s');
 			$sql_name = '"ACKNOWLEDGEMENT-NO","APPLICANT-CATEGORY","FORM-TYPE","NSDL-TAN-MIS-STRING","ACTIVITY-LOG"';
 			$sql_val = "'".$akno."','".$catego."','".$formtype."','".str_replace("'","''",$myrecord[$i])."','".$activityLog."'";
 			$query = ' Insert into panprogres."tbl_tan_master" ('.$sql_name.') Values ('.$sql_val.')'.' ON CONFLICT ("ACKNOWLEDGEMENT-NO") DO NOTHING;';
-		
-			
-	
+
+
+
 				$misinsert = pg_query(OpenCon(),$query);
 				$effectedRow+=pg_affected_rows($misinsert);
-				$dberror = pg_last_error(OpenCon()); 
-				
-				
+				$dberror = pg_last_error(OpenCon());
+
+
 					if ($dberror != null || trim($dberror)!="")
 					{
 						MISuploadlogger_new("[ERROR] -- "
 											 ."============================================================================================== \n"
-											.$query 
+											.$query
 											."\n\r-------------------------------------------------------------------------------------------\n "
 											.$dberror
 											."\n---------------------------------------------------------------------------------------------\n"
@@ -548,21 +550,21 @@ function findWrongStringTan($myrecord,$startpos,&$prblemString)
 											.$MString
 											."+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
 											);
-						
+
 						$prblemString.=$MString;
-						
+
 
 					}
 					else
 					{
 						$j++;
-						MISuploadlogger_new("[INFO] -- Record Processed  -- " .($i+$j). " out of  ".($TotalUpload+$j)."   Successfull Records ". $j ." out of " .($i+$j) );	
+						MISuploadlogger_new("[INFO] -- Record Processed  -- " .($i+$j). " out of  ".($TotalUpload+$j)."   Successfull Records ". $j ." out of " .($i+$j) );
 					}
-					
-				
+
+
 				$query="";
 				$MString="";
-			
+
 		}
 	}
 	if (trim($prblemString)!="")
@@ -619,9 +621,9 @@ function getStage($value){
 	}
 	elseif(substr($value,6,3)=='DCM' && substr($value,10,2)=='RC'){
 		return "Receive";
-	}  
+	}
 
-	
+
 
     // elseif(substr($value,6,3)=='BTN'){
     //   return "Batch Generated";
@@ -638,7 +640,7 @@ function getStage($value){
     // }
     else{
       return "";
-    }   
+    }
   }
 
 
@@ -669,12 +671,12 @@ function getStage($value){
   //     return "Uploaded Data";
   //   }else{
   //     return "";
-  //   }   
+  //   }
   // }
 
  function getCommissionRate($branchCode,$type){
 
-$currentDate =  $currentDate = date("Y-m-d",time()); 
+$currentDate =  $currentDate = date("Y-m-d",time());
 
 $DataEntryQuery = "SELECT \"commission\" FROM panprogres.\"commissionRateMaster\" WHERE \"Status\"=1 AND \"fromDate\" <= '_date' AND \"toDate\" >= '_date' AND \"Id\" in (SELECT \"commissionId\" FROM panprogres.\"branchInfoMaster\" WHERE \"BranchCode\"='branch') ";
 
@@ -718,14 +720,14 @@ $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
 MISuploadlogger("=====product==".$DataEntryQuery);
 if(pg_num_rows($getDatafromData) > 0) {
 $resultData = pg_fetch_assoc($getDatafromData);
-return trim($resultData['ProductType']);	
+return trim($resultData['ProductType']);
 }
 return 0;
 }
 
 function getBalance($accountName){
 
-$DataEntryQuery = "SELECT \"Balance\" FROM panprogres.\"accountNameMaster\" WHERE \"Balance\" IS NOT NULL AND \"SubLedgerId\"='_account'";
+$DataEntryQuery = "SELECT \"Balance\" FROM masters.\"accountNameMaster\" WHERE \"Balance\" IS NOT NULL AND \"SubLedgerId\"='_account'";
 
 $DataEntryQuery =str_replace('_account',$accountName,$DataEntryQuery);
 
@@ -735,19 +737,19 @@ $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
 
 if(pg_num_rows($getDatafromData) > 0) {
 $resultData = pg_fetch_assoc($getDatafromData);
-return $resultData['Balance'];	
+return $resultData['Balance'];
 }
 return 0;
 }
 
  function updateBalance($accountName,$balance){
 
-$obsUpdateQuery =" Update panprogres.\"accountNameMaster\" set \"Balance\" ='_balance' where \"SubLedgerId\" = '_account' ;";
+$obsUpdateQuery =" Update masters.\"accountNameMaster\" set \"Balance\" ='_balance' where \"SubLedgerId\" = '_account' ;";
 
 $obsUpdateQuery = str_replace('_account',$accountName, $obsUpdateQuery);
 $obsUpdateQuery = str_replace('_balance',$balance, $obsUpdateQuery);
 
-// MISuploadlogger("===Update Balance==".$obsUpdateQuery);
+MISuploadlogger("===Update Balance==".$obsUpdateQuery);
 $result = pg_query(OpenCon(),$obsUpdateQuery);
 
 if(pg_affected_rows($result) > 0){
@@ -798,12 +800,13 @@ $DataEntryQuery = "SELECT \"Name\" FROM masters.\"accountGroupMaster\" WHERE \"I
 $DataEntryQuery =str_replace('_gid',$groupId,$DataEntryQuery);
 
 $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
+$aa = pg_num_rows($getDatafromData);
 
 if(pg_num_rows($getDatafromData) > 0) {
-$resultData = pg_fetch_assoc($getDatafromData);
-return $resultData['Name'];	
+	$resultData = pg_fetch_assoc($getDatafromData);
+	return $resultData['Name'];
 }
-return "";
+	return "";
 }
 
 function getSubGroupName($groupId){
@@ -816,7 +819,7 @@ $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
 
 if(pg_num_rows($getDatafromData) > 0) {
 $resultData = pg_fetch_assoc($getDatafromData);
-return $resultData['Name'];	
+return $resultData['Name'];
 }
 return "";
 }
@@ -831,9 +834,9 @@ $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
 
 if(pg_num_rows($getDatafromData) > 0) {
 $resultData = pg_fetch_assoc($getDatafromData);
-return $resultData['SubLedgerId'];	
+return $resultData['SubLedgerId'];
 }else{
-return "";	
+return "";
 }
 }
 
@@ -847,9 +850,9 @@ $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
 
 if(pg_num_rows($getDatafromData) > 0) {
 $resultData = pg_fetch_assoc($getDatafromData);
-return $resultData['accountName'];	
+return $resultData['accountName'];
 }else{
-return "";	
+return "";
 }
 }
 
@@ -885,7 +888,7 @@ $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
 
 if(pg_num_rows($getDatafromData) > 0) {
 $resultData = pg_fetch_assoc($getDatafromData);
-return $resultData['Name'];	
+return $resultData['Name'];
 }
 return "-";
 }
@@ -900,7 +903,7 @@ $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
 
 if(pg_num_rows($getDatafromData) > 0) {
 $resultData = pg_fetch_assoc($getDatafromData);
-return $resultData['accountName'];	
+return $resultData['accountName'];
 }
 return "-";
 }
@@ -918,13 +921,13 @@ $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
 if(pg_num_rows($getDatafromData) > 0) {
 $resultData = pg_fetch_assoc($getDatafromData);
 
-$CommissionId =  $resultData['SchemeId'];	
+$CommissionId =  $resultData['SchemeId'];
 
 $EntryQuery = "SELECT \"Days\" FROM panprogres.\"commissionRateMaster\" WHERE \"Type\"='_type' AND \"commissionId\"='_uid' AND '_date' BETWEEN \"fromDate\" AND \"toDate\" ";
 
 $EntryQuery =str_replace('_uid',$CommissionId,$EntryQuery);
 
-$EntryQuery =str_replace('_type',$type,$EntryQuery); 
+$EntryQuery =str_replace('_type',$type,$EntryQuery);
 
 $EntryQuery =str_replace('_date',date('Y-m-d',time()),$EntryQuery);
 
@@ -949,13 +952,13 @@ $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
 if(pg_num_rows($getDatafromData) > 0) {
 $resultData = pg_fetch_assoc($getDatafromData);
 
-$CommissionId =  $resultData['SchemeId'];	
+$CommissionId =  $resultData['SchemeId'];
 
 $EntryQuery = "SELECT \"commission\" FROM panprogres.\"commissionRateMaster\" WHERE \"Status\"=1 AND \"Type\"='_type' AND \"commissionId\"='_uid' AND '_date' BETWEEN \"fromDate\" AND \"toDate\" ";
 
 $EntryQuery =str_replace('_uid',$CommissionId,$EntryQuery);
 
-$EntryQuery =str_replace('_type',$type,$EntryQuery); 
+$EntryQuery =str_replace('_type',$type,$EntryQuery);
 
 $EntryQuery =str_replace('_date',date('Y-m-d',time()),$EntryQuery);
 
@@ -978,8 +981,8 @@ function findWrongStringEtds($myrecord,$startpos,&$prblemString)
 	$sql_name='';
 	$sql_val='';
 	$query='';
-	
-	
+
+
 	$activityLog="";
 	$effectedRow=0;
 	for($i=0; $i<$TotalUpload; $i++)
@@ -1011,19 +1014,19 @@ function findWrongStringEtds($myrecord,$startpos,&$prblemString)
 			$sql_name = '"REFERENCE-NO","TOKEN-NO","RECEIPT-NO","TOKEN-DATE","BAR-CODE","TYPE","NAME-DEDUCTOR","TAN-NO","FINANCE-YEAR","PERIOD","FORM","AO-CODE","CORRECTION-NO","AMOUNT","BRANCH-CODE","NO-DEDUCTOR","OTHER-TYPE","NSDL-ETDS-MIS-STRING","UPLOAD-DATE"';
 			$sql_val = "'".$refno."','".$tokenno."','".$receiptno."','".$tokendate."','".$barcode."','".$type."','".$namedeductee."','".$tanno."','".$financeyear."','".$period."','".$form."','".$aocode."','".$correctionno."','".$amount."','".$branchcode."','".$nodeductor."','".$othertype."','".str_replace("'","''",$myrecord[$i])."','".date('Y-m-d')."'";
 			$query .= ' Insert into panprogres."tbl_etds_master" ('.$sql_name.') Values ('.$sql_val.')'.' ON CONFLICT ("REFERENCE-NO") DO NOTHING;';
-		
-			
-	
+
+
+
 				$misinsert = pg_query(OpenCon(),$query);
 				$effectedRow+=pg_affected_rows($misinsert);
-				$dberror = pg_last_error(OpenCon()); 
-				
-				
+				$dberror = pg_last_error(OpenCon());
+
+
 					if ($dberror != null || trim($dberror)!="")
 					{
 						MISuploadlogger_new("[ERROR] -- "
 											 ."============================================================================================== \n"
-											.$query 
+											.$query
 											."\n\r-------------------------------------------------------------------------------------------\n "
 											.$dberror
 											."\n---------------------------------------------------------------------------------------------\n"
@@ -1032,21 +1035,21 @@ function findWrongStringEtds($myrecord,$startpos,&$prblemString)
 											.$MString
 											."+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
 											);
-						
+
 						$prblemString.=$MString;
-						
+
 
 					}
 					else
 					{
 						$j++;
-						MISuploadlogger_new("[INFO] -- Record Processed  -- " .($i+$j). " out of  ".($TotalUpload+$j)."   Successfull Records ". $j ." out of " .($i+$j) );	
+						MISuploadlogger_new("[INFO] -- Record Processed  -- " .($i+$j). " out of  ".($TotalUpload+$j)."   Successfull Records ". $j ." out of " .($i+$j) );
 					}
-					
-				
+
+
 				$query="";
 				$MString="";
-			
+
 		}
 	}
 	if (trim($prblemString)!="")
@@ -1065,8 +1068,8 @@ function findWrongString24g($myrecord,$startpos,&$prblemString)
 	$sql_name='';
 	$sql_val='';
 	$query='';
-	
-	
+
+
 	$activityLog="";
 	$effectedRow=0;
 	for($i=0; $i<$TotalUpload; $i++)
@@ -1096,19 +1099,19 @@ function findWrongString24g($myrecord,$startpos,&$prblemString)
 			$sql_name = '"TYPE","REFERENCE-NO","STATEMENT-TYPE","STATUS","PRN_NO","PRN-DATE","AIN","TRANSACTION-TYPE","AO-NAME","FINANCIAL-DATE","DDO-CATEGORY","MONTH","SAM-VERSION","FILLING-FEES","DDA-DETAILS","UPLOAD-DATE","NSDL-24G-MIS-STRING"';
 			$sql_val = "'".$type."','".$refno."','".$statementtype."','".$status."','".$prnNo."','".$prnDate."','".$ain."','".$transactionType."','".$aoName."','".$financialYear."','".$ddoCategory."','".$month."','".$samVersion."','".$fillingFees."','".$ddoDetails."','".$uploadDate."','".str_replace("'","''",$myrecord[$i])."'";
 			$query .= ' Insert into panprogres."tbl_24g_master" ('.$sql_name.') Values ('.$sql_val.')'.' ON CONFLICT ("PRN_NO") DO NOTHING;';
-		
-			
-	
+
+
+
 				$misinsert = pg_query(OpenCon(),$query);
 				$effectedRow+=pg_affected_rows($misinsert);
-				$dberror = pg_last_error(OpenCon()); 
-				
-				
+				$dberror = pg_last_error(OpenCon());
+
+
 					if ($dberror != null || trim($dberror)!="")
 					{
 						MISuploadlogger_new("[ERROR] -- "
 											 ."============================================================================================== \n"
-											.$query 
+											.$query
 											."\n\r-------------------------------------------------------------------------------------------\n "
 											.$dberror
 											."\n---------------------------------------------------------------------------------------------\n"
@@ -1117,21 +1120,21 @@ function findWrongString24g($myrecord,$startpos,&$prblemString)
 											.$MString
 											."+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
 											);
-						
+
 						$prblemString.=$MString;
-						
+
 
 					}
 					else
 					{
 						$j++;
-						MISuploadlogger_new("[INFO] -- Record Processed  -- " .($i+$j). " out of  ".($TotalUpload+$j)."   Successfull Records ". $j ." out of " .($i+$j) );	
+						MISuploadlogger_new("[INFO] -- Record Processed  -- " .($i+$j). " out of  ".($TotalUpload+$j)."   Successfull Records ". $j ." out of " .($i+$j) );
 					}
-					
-				
+
+
 				$query="";
 				$MString="";
-			
+
 		}
 	}
 	if (trim($prblemString)!="")
@@ -1197,14 +1200,14 @@ return 0;
 function getBranchEmail($branchCode){
 
 	$DataEntryQuery = "SELECT \"PrimaryEmail\" FROM panprogres.\"branchInfoMaster\" WHERE \"BranchCode\"='_gid'";
-	
+
 	$DataEntryQuery =str_replace('_gid',$branchCode,$DataEntryQuery);
-	
+
 	$getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
-	
+
 	if(pg_num_rows($getDatafromData) > 0) {
 	$resultData = pg_fetch_assoc($getDatafromData);
-	return $resultData['PrimaryEmail'];	
+	return $resultData['PrimaryEmail'];
 	}
 	return "-";
 	}
@@ -1212,17 +1215,17 @@ function getBranchEmail($branchCode){
 	function getBranchContactPerson($branchCode){
 
 		$DataEntryQuery = "SELECT \"ContactPerson\" FROM panprogres.\"branchInfoMaster\" WHERE \"BranchCode\"='_gid'";
-		
+
 		$DataEntryQuery =str_replace('_gid',$branchCode,$DataEntryQuery);
-		
+
 		$getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
-		
+
 		if(pg_num_rows($getDatafromData) > 0) {
 		$resultData = pg_fetch_assoc($getDatafromData);
-		return $resultData['ContactPerson'];	
+		return $resultData['ContactPerson'];
 		}
 		return "-";
-		}	
+		}
 
 
 function BilledBalance($accountCode){
@@ -1324,15 +1327,15 @@ function GetBunchSequeceOftheDay()
 		$contents = file_get_contents('BunchSequence.txt');
 
 		$sequenceNo=$contents;
-		
+
 			$sequenceNo++;
 
 			$returnval=$sequenceNo;
-	
+
 	}
 	$contents=strval($sequenceNo);
 	file_put_contents ('BunchSequence.txt',$contents);
-	
+
 	return $returnval;
 
 }
@@ -1354,7 +1357,7 @@ function getCommissionType($ValueofField){
         return "";
    }
    return trim(array_search(strtoupper($ValueofField),array_map('strtoupper',$ArrayApplStatus)));
- 
+
 }
 
 function getSchemeName($Id){
@@ -1388,15 +1391,15 @@ function GetAccSequence()
 		$contents = file_get_contents('SequenceAccNo.txt');
 
 		$sequenceNo=$contents;
-		
+
 			$sequenceNo++;
 
 			$returnval=$sequenceNo;
-	
+
 	}
 	$contents=strval($sequenceNo);
 	file_put_contents('SequenceAccNo.txt',$contents);
-	
+
 	return $returnval;
 
 }
