@@ -33,7 +33,7 @@ if (isset($data['AccountName'])) {
     $sql_name = '"accountName","subGroupId","status","SubLedgerId"';
     $sql_val = "'".$accountName."','".$subGroupId."','".$status."','".$SubLedgerId."'";
 
-    $add = inserting('masters."accountNameMaster"', $sql_name, $sql_val);
+    $add = inserting(_ACCOUNT_NAME_MASTER_, $sql_name, $sql_val);
 
     if ($add == 'yes') {
         echo json_encode(['Status' => 1, 'Message' =>'Insert Data Successfully!']);

@@ -28,12 +28,12 @@ $arrayDataRows = array();
 
 // ////---------------------- Extraction from DataBase --------------------------------
 
-$DataEntryQuery = "SELECT * FROM masters.\"accountGroupMaster\" WHERE true _accGrp _name ORDER BY \"Id\" ASC";
+// Construct the initial query
+$DataEntryQuery = 'SELECT * FROM ' . _ACCOUNT_GROUP_MASTER_ . ' WHERE true _accGrp _name ORDER BY "Id" ASC';
 
-$DataEntryQuery = str_replace("_accGrp",$accountGroup!=''?" and \"TypeId\"='".$accountGroup."' ":"",$DataEntryQuery );
-
-$DataEntryQuery = str_replace("_name",$name!=''?" and UPPER(\"Name\") LIKE '%".$name."%' ":"",$DataEntryQuery );
-
+// Replace placeholders with actual conditions
+$DataEntryQuery = str_replace("_accGrp", $accountGroup != '' ? " AND \"TypeId\" = '" . pg_escape_string($accountGroup) . "'" : '', $DataEntryQuery);
+$DataEntryQuery = str_replace("_name", $name != '' ? " AND UPPER(\"Name\") LIKE '%" . pg_escape_string($name) . "%'" : '', $DataEntryQuery);
 
 MISuploadlogger("Query to extract the records-----\n".$DataEntryQuery);
 

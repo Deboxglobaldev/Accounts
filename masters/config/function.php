@@ -348,22 +348,24 @@ function MISuploadlogger_new($errorlog)
 }
 
 
-function checkduplicateentry($tablename,$select,$where)
+function checkduplicateentry($tablename, $select, $value)
 {
 	$InfoMessage = "[Info] - File location ".$_SERVER['PHP_SELF']." Message:- " ;
 
 
-	$result = 'SELECT "'.$select.'" FROM '.$tablename.' WHERE '.$where.'';
-             MISuploadlogger($InfoMessage."Query for CheckDupliicate - ".$result);
-	$checkdublicate = pg_query(OpenCon(), $result);
-	$numrows = pg_num_rows($checkdublicate);
-	if($numrows>0)
-	{
-	return  'yes';
-	} else {
-	return  'no';
-	}
+	$where = '"' . $select . '" = \'' . $value . '\'';
+
+    $result = 'SELECT "' . $select . '" FROM ' . $tablename . ' WHERE ' . $where;
+    MISuploadlogger($InfoMessage . "Query for CheckDupliicate - " . $result);
+    $checkdublicate = pg_query(OpenCon(), $result);
+    $numrows = pg_num_rows($checkdublicate);
+    if ($numrows > 0) {
+        return 'yes';
+    } else {
+        return 'no';
+    }
 }
+
 function inserting($tablename, $name, $values) {
     $InfoMessage = "[Info] - File location ".$_SERVER['PHP_SELF']." Message:- " ;
 
@@ -725,7 +727,7 @@ return 0;
 
 function getBalance($accountName){
 
-$DataEntryQuery = "SELECT \"Balance\" FROM panprogres.\"accountNameMaster\" WHERE \"Balance\" IS NOT NULL AND \"SubLedgerId\"='_account'";
+$DataEntryQuery = "SELECT \"Balance\" FROM masters.\"accountNameMaster\" WHERE \"Balance\" IS NOT NULL AND \"SubLedgerId\"='_account'";
 
 $DataEntryQuery =str_replace('_account',$accountName,$DataEntryQuery);
 
@@ -742,12 +744,12 @@ return 0;
 
  function updateBalance($accountName,$balance){
 
-$obsUpdateQuery =" Update panprogres.\"accountNameMaster\" set \"Balance\" ='_balance' where \"SubLedgerId\" = '_account' ;";
+$obsUpdateQuery =" Update masters.\"accountNameMaster\" set \"Balance\" ='_balance' where \"SubLedgerId\" = '_account' ;";
 
 $obsUpdateQuery = str_replace('_account',$accountName, $obsUpdateQuery);
 $obsUpdateQuery = str_replace('_balance',$balance, $obsUpdateQuery);
 
-// MISuploadlogger("===Update Balance==".$obsUpdateQuery);
+MISuploadlogger("===Update Balance==".$obsUpdateQuery);
 $result = pg_query(OpenCon(),$obsUpdateQuery);
 
 if(pg_affected_rows($result) > 0){
