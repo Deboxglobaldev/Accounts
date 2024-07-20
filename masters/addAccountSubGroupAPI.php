@@ -27,7 +27,7 @@ if(isset($data['Name']))
 
 	// print_r($sql_val);die;
 
-	$add = inserting('masters."accountSubGroupMaster"',$sql_name,$sql_val);
+	$add = inserting(_ACCOUNT_SUBGROUP_MASTER_,$sql_name,$sql_val);
 
 	if($add){
 		echo json_encode(['Status' => 1, 'Message' =>'Data Added Successfully!']);
