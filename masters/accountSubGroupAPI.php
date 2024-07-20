@@ -1,10 +1,10 @@
 <?php
-
-include "inc.php"; 
+header("Content-Type: application/json");
+include "inc.php";
 
 MISuploadlogger("Entering in Account Sub Group Page");
 
-header("Content-Type: application/json");
+
 $parameterdata = file_get_contents('php://input');
 $parameterdata = str_replace("null","\"\"",$parameterdata);
 MISuploadlogger($parameterdata);
@@ -17,7 +17,6 @@ class clsDataTable
 {
 
   public $Number;
-  // public $Id;
   public $Name;
   public $GroupName;
   public $GroupId;
@@ -34,7 +33,7 @@ $DataEntryQuery = str_replace("_accGrp",$accountGroup!=''?" and \"GroupId\"='".$
 
 $DataEntryQuery = str_replace("_name",$name!=''?" and UPPER(\"Name\") LIKE '%".$name."%' ":"",$DataEntryQuery );
 
-MISuploadlogger("Query to extract the records-----\n".$DataEntryQuery);    
+MISuploadlogger("Query to extract the records-----\n".$DataEntryQuery);
 
 $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
 
@@ -45,10 +44,10 @@ $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
      $objDataTable = new clsDataTable();
 
      $objDataTable->Number =$i;
-     $objDataTable->LedgerId =$dataList['LedgerId'];
      $objDataTable->Name =$dataList['Name'];
      $objDataTable->GroupName =getGroupName($dataList['GroupId']);
      $objDataTable->GroupId =$dataList['GroupId'];
+     $objDataTable->LedgerId =$dataList['LedgerId'];
 
      $a = array_push($arrayDataRows,$objDataTable);
 
@@ -57,7 +56,7 @@ $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
      $total = count($arrayDataRows);
 
   }
-  
+
 echo json_encode(['status'=>0,'Total'=>$total,'AccountSubGroupData'=>$arrayDataRows],JSON_PRETTY_PRINT);
 
 ?>
