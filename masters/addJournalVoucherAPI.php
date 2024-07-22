@@ -94,7 +94,7 @@ foreach ($inputData->ListOfTransaction as $value) {
 $journal_name = '"voucherNo","dateAdded","listOfJson","transactionDate","addedBy","Type"';
 $journal_val = "'{$voucherNo}','{$dateAdded}','{$ListOfJson}','{$transactionDate}','{$AddedBy}','JV'";
 
-$journal = "INSERT INTO " . _VOUCHER_MASTER_ . " ({$journal_name}) VALUES ({$journal_val});";
+$journal = "INSERT INTO " . _VOUCHER_ENTRY_ . " ({$journal_name}) VALUES ({$journal_val});";
 
 MISuploadlogger("===Journal Insert====" . $journal);
 
