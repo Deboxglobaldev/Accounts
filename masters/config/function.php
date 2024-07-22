@@ -731,7 +731,7 @@ $DataEntryQuery = "SELECT \"Balance\" FROM masters.\"accountNameMaster\" WHERE \
 
 $DataEntryQuery =str_replace('_account',$accountName,$DataEntryQuery);
 
-// MISuploadlogger("===Balance==".$DataEntryQuery);
+MISuploadlogger("===Balance==".$DataEntryQuery);
 
 $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
 

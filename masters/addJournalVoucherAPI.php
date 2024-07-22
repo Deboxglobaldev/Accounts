@@ -2,7 +2,7 @@
 
 include "inc.php";
 
-MISuploadlogger("*********************   Inside page Post Journal API *******************************");
+MISuploadlogger("*******   Inside page Post Journal API ***********");
 
 define("INF","{INFO} -");
 define("ERR","{ERROR} -");
@@ -23,34 +23,41 @@ $ip = $inputData->ip;
 $ListOfJson = json_encode($inputData->ListOfTransaction);
 $voucherNo = "JV-" . date('dmy') . "-" . GetVoucherSequenceOftheDay();
 $Type = "journalVoucher";
-// print_r($inputData);
-// die;
 
 function updateTransaction($value, $voucherNo, $dateAdded, $AddedBy, $ip, $Type) {
     $balance = getBalance($value->AccountName);
 
-    if ($value->Credit != '0' && $value->Credit != '') {
-        $finalBalance = $balance + $value->Credit;
+    MISuploadlogger("Current Balance for {$value->AccountName}: {$balance}");
+
+    // Ensure Credit and Debit are numeric
+    $Credit = is_numeric($value->Credit) ? floatval($value->Credit) : 0;
+    $Debit = is_numeric($value->Debit) ? floatval($value->Debit) : 0;
+
+    MISuploadlogger("Processed Credit: {$Credit}, Debit: {$Debit}");
+
+    if ($Credit != 0) {
+        $finalBalance = $balance + $Credit;
         $TransferType = "Credit";
-        $Amount = $value->Credit;
-    } elseif ($value->Debit != '0' && $value->Debit != '') {
-        $finalBalance = $balance - $value->Debit;
+        $Amount = $Credit;
+    } elseif ($Debit != 0) {
+        $finalBalance = $balance - $Debit;
         $TransferType = "Debit";
-        $Amount = $value->Debit;
+        $Amount = $Debit;
     } else {
         return false;
     }
-    
+
+    MISuploadlogger("Final Balance for {$value->AccountName}: {$finalBalance}");
 
     if (updateBalance($value->AccountName, $finalBalance)) {
         $ActivityLog = "{$value->AccountName}^Journal Voucher^{$TransferType}^{$Amount}^{$voucherNo}^{$AddedBy}^" . date('Y-m-d H:i:s') . "^{$ip}^{$balance}^{$finalBalance}";
 
         $sql_name = '"AccountName","VoucherNo","Detail","DateAdded","Debit","Credit","Type","Balance","ActivityLog"';
-        $sql_val = "'{$value->AccountName}','{$voucherNo}','{$value->Narration}','{$dateAdded}','{$value->Debit}','{$value->Credit}','{$Type}','" . getBalance($value->AccountName) . "','{$ActivityLog}'";
+        $sql_val = "'{$value->AccountName}','{$voucherNo}','{$value->Narration}','{$dateAdded}','{$Debit}','{$Credit}','{$Type}','" . getBalance($value->AccountName) . "','{$ActivityLog}'";
 
         $query = "INSERT INTO " . _VOUCHER_MASTER_ ."  ({$sql_name}) VALUES ({$sql_val});";
 
-        MISuploadlogger("Account Balance of Branch {$value->AccountName} is updated");
+        MISuploadlogger("Query: {$query}");
 
         $misinsert = pg_query(OpenCon(), $query);
 
@@ -66,6 +73,20 @@ function updateTransaction($value, $voucherNo, $dateAdded, $AddedBy, $ip, $Type)
     }
 }
 
+function validateTransactions($transactions) {
+    foreach ($transactions as $transaction) {
+        if (is_numeric($transaction->Debit) && is_numeric($transaction->Credit) && ($transaction->Debit != '0' && $transaction->Debit != '') && ($transaction->Credit != '0' && $transaction->Credit != '')) {
+            return false;
+        }
+    }
+    return true;
+}
+
+if (!validateTransactions($inputData->ListOfTransaction)) {
+    echo json_encode(["status" => 0, "message" => "Invalid data: Each transaction should have either a debit or a credit entry, but not both"], JSON_PRETTY_PRINT);
+    exit;
+}
+
 foreach ($inputData->ListOfTransaction as $value) {
     $effectedRow += updateTransaction($value, $voucherNo, $dateAdded, $AddedBy, $ip, $Type);
 }
@@ -73,15 +94,13 @@ foreach ($inputData->ListOfTransaction as $value) {
 $journal_name = '"voucherNo","dateAdded","listOfJson","transactionDate","addedBy","Type"';
 $journal_val = "'{$voucherNo}','{$dateAdded}','{$ListOfJson}','{$transactionDate}','{$AddedBy}','JV'";
 
-$journal = "INSERT INTO " . _VOUCHER_ENTRY_ . " ({$journal_name}) VALUES ({$journal_val});";
+$journal = "INSERT INTO " . _VOUCHER_MASTER_ . " ({$journal_name}) VALUES ({$journal_val});";
 
-// echo $journal;
-// die;
 MISuploadlogger("===Journal Insert====" . $journal);
 
 $journalinsert = pg_query(OpenCon(), $journal);
 
-if ($journalinsert && $effectedRow > 0) {
+if ($effectedRow > 0) {
     echo json_encode(["status" => 1, "message" => "Saved Successfully"], JSON_PRETTY_PRINT);
 } else {
     echo json_encode(["status" => 0, "message" => "Failed to Save"], JSON_PRETTY_PRINT);
