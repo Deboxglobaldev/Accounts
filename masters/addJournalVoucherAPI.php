@@ -50,10 +50,39 @@ function updateTransaction($value, $voucherNo, $dateAdded, $AddedBy, $ip, $Type)
     MISuploadlogger("Final Balance for {$value->AccountName}: {$finalBalance}");
 
     if (updateBalance($value->AccountName, $finalBalance)) {
-        $ActivityLog = "{$value->AccountName}^Journal Voucher^{$TransferType}^{$Amount}^{$voucherNo}^{$AddedBy}^" . date('Y-m-d H:i:s') . "^{$ip}^{$balance}^{$finalBalance}";
+
+        $existingLogQuery = "SELECT \"ActivityLog\" FROM " . _VOUCHER_MASTER_ . " WHERE \"AccountName\" = '{$value->AccountName}' ORDER BY \"Id\" DESC LIMIT 1;";
+        
+        $existingLogResult = pg_query(OpenCon(), $existingLogQuery);
+        $existingLog = pg_fetch_assoc($existingLogResult);
+        // print_r($existingLog);
+        // die;
+
+        $ActivityLogString = $existingLog['ActivityLog'];
+        $ActivityLog = json_decode($ActivityLogString, true);
+       
+
+
+        if (!is_array($ActivityLog)) {
+            $ActivityLog = ['entries' => [], 'insertCount' => 0];
+        }
+
+
+        if (!isset($ActivityLog['insertCount'])) {
+            $ActivityLog['insertCount'] = 0;
+        }
+        $ActivityLog['insertCount']++;
+        $ActivityLog['entries'] = [];
+
+
+        $ActivityLogEntry = "{$value->AccountName}^Journal Voucher^{$TransferType}^{$Amount}^{$voucherNo}^{$AddedBy}^" . date('Y-m-d H:i:s') . "^{$ip}^{$balance}^{$finalBalance}";
+        $ActivityLog['entries'][] = $ActivityLogEntry;
+
+
+        $ActivityLogJson = json_encode($ActivityLog);
 
         $sql_name = '"AccountName","VoucherNo","Detail","DateAdded","Debit","Credit","Type","Balance","ActivityLog"';
-        $sql_val = "'{$value->AccountName}','{$voucherNo}','{$value->Narration}','{$dateAdded}','{$Debit}','{$Credit}','{$Type}','" . getBalance($value->AccountName) . "','{$ActivityLog}'";
+        $sql_val = "'{$value->AccountName}','{$voucherNo}','{$value->Narration}','{$dateAdded}','{$Debit}','{$Credit}','{$Type}','" . getBalance($value->AccountName) . "','{$ActivityLogJson}'";
 
         $query = "INSERT INTO " . _VOUCHER_MASTER_ ."  ({$sql_name}) VALUES ({$sql_val});";
 
