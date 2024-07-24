@@ -17,10 +17,10 @@ class clsDataTable
 {
 
   public $Number;
+  public $Id;
   public $Name;
   public $GroupName;
   public $GroupId;
-  public $LedgerId;
 }
 
 $arrayDataRows = array();
@@ -47,7 +47,7 @@ $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
      $objDataTable->Name =$dataList['Name'];
      $objDataTable->GroupName =getGroupName($dataList['GroupId']);
      $objDataTable->GroupId =$dataList['GroupId'];
-     $objDataTable->LedgerId =$dataList['LedgerId'];
+     $objDataTable->Id =$dataList['LedgerId'];
 
      $a = array_push($arrayDataRows,$objDataTable);
 

@@ -1,4 +1,4 @@
-<?php 
+<?php
 include "inc.php";
 $InfoMessage = "[Info] - File location ".$_SERVER['PHP_SELF']." Message:- ";
 MISuploadlogger($InfoMessage."At beginning of API Call");
@@ -9,7 +9,7 @@ $data = json_decode($request_body, true);
 $validates = ['AccountName'];
 foreach ($validates as $validate) {
     if (!isset($data[$validate]) || empty($data[$validate])) {
-        echo json_encode(array('Error' => $validate . ' is required'));
+        echo json_encode(array('Message' => $validate . ' is required'));
         exit();
     }
 }
@@ -26,7 +26,7 @@ if (isset($data['AccountName'])) {
         $SubLedgerId = "SLB".$accountName;
     } else {
         $n = GetAccSequence();
-        $n2 = str_pad($n, 4, '0', STR_PAD_LEFT); 
+        $n2 = str_pad($n, 4, '0', STR_PAD_LEFT);
         $SubLedgerId = "SLB".$n2;
     }
 
@@ -48,7 +48,5 @@ if (isset($data['AccountName'])) {
         $errorInfo = pg_last_error($db);
         MISuploadlogger($InfoMessage." SQL Error: ".$errorInfo);
     }
-} else {
-    echo "AccountName is required!";
 }
 ?>

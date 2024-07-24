@@ -1,4 +1,4 @@
-<?php 
+<?php
 include "inc.php";
 $InfoMessage = "[Info] - File location ".$_SERVER['PHP_SELF']." Message:- " ;
 MISuploadlogger($InfoMessage."At begining of API Call");
@@ -6,21 +6,21 @@ MISuploadlogger($InfoMessage."At begining of API Call");
 $request_body = file_get_contents('php://input');
 $data = json_decode($request_body, true);
 
-$validates = ['Name'];
+$validates = ['name'];
 foreach ($validates as $validate) {
     if (!isset($data[$validate]) || empty($data[$validate])) {
-        echo json_encode(array('Error' => $validate . ' is required'));
+        echo json_encode(array('Message' => $validate . ' is required'));
         exit();
     }
 }
 
 //add branch basic information
-if(isset($data['Name']))
+if(isset($data['name']))
 {
 
-  $accountGroup = $data['GroupId'];
-  $name = $data['Name'];
-  $LedgerId = $data['LedgerId'];
+  $accountGroup = $data['accountGroup'];
+  $name = $data['name'];
+  $LedgerId = $data['ledgerId'];
 
 	$sql_name = '"Name","GroupId","LedgerId"';
 	$sql_val = "'".$name."','".$accountGroup."','".$LedgerId."'";

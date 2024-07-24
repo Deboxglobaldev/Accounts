@@ -1,0 +1,159 @@
+127.0.0.1	23-07-2024 03:17:56 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:17:56 PM	{
+    "accountGroup":"1"
+}127.0.0.1	23-07-2024 03:17:56 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:17:56 PM	{
+    "accountGroup":"2"
+}127.0.0.1	23-07-2024 03:17:56 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:17:56 PM	{
+    "accountGroup":"3"
+}127.0.0.1	23-07-2024 03:17:56 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:17:56 PM	{
+    "accountGroup":"4"
+}127.0.0.1	23-07-2024 03:17:56 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:17:56 PM	{
+    "accountGroup":"5"
+}127.0.0.1	23-07-2024 03:18:38 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:18:38 PM	{
+    "accountGroup":"1"
+}127.0.0.1	23-07-2024 03:18:42 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:18:42 PM	{
+    "accountGroup":"1"
+}127.0.0.1	23-07-2024 03:18:48 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:18:48 PM	{
+    "accountGroup":"1"
+}127.0.0.1	23-07-2024 03:18:48 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:18:48 PM	{
+    "accountGroup":"2"
+}127.0.0.1	23-07-2024 03:18:48 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:18:48 PM	{
+    "accountGroup":"3"
+}127.0.0.1	23-07-2024 03:18:48 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:18:48 PM	{
+    "accountGroup":"4"
+}127.0.0.1	23-07-2024 03:18:48 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:18:48 PM	{
+    "accountGroup":"5"
+}127.0.0.1	23-07-2024 03:19:11 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:19:11 PM	{
+    "accountGroup":"1"
+}127.0.0.1	23-07-2024 03:19:50 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:19:50 PM	{
+    "name" : "",
+    "accountGroup" : "2",
+    "status" : ""
+}127.0.0.1	23-07-2024 03:19:55 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:19:55 PM	{
+    "name" : "",
+    "accountGroup" : "2",
+    "status" : ""
+}127.0.0.1	23-07-2024 03:23:08 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:23:08 PM	{
+    "accountGroup":"1"
+}127.0.0.1	23-07-2024 03:23:08 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:23:08 PM	{
+    "accountGroup":"2"
+}127.0.0.1	23-07-2024 03:23:08 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:23:08 PM	{
+    "accountGroup":"3"
+}127.0.0.1	23-07-2024 03:23:08 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:23:08 PM	{
+    "accountGroup":"4"
+}127.0.0.1	23-07-2024 03:23:08 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:23:08 PM	{
+    "accountGroup":"5"
+}127.0.0.1	23-07-2024 03:24:13 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:24:13 PM	{
+    "name" : "",
+    "accountGroup" : "2",
+    "status" : ""
+}127.0.0.1	23-07-2024 03:24:13 PM	Query to extract the records-----
+SELECT * FROM masters."accountGroupMaster" WHERE true _accGrp _name ORDER BY "Id" ASC127.0.0.1	23-07-2024 03:25:27 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:25:27 PM	{
+    "name" : "",
+    "accountGroup" : "2",
+    "status" : ""
+}127.0.0.1	23-07-2024 03:27:20 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:27:20 PM	{
+    "name" : "",
+    "accountGroup" : "2",
+    "status" : ""
+}127.0.0.1	23-07-2024 03:27:44 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:27:44 PM	{
+    "accountGroup":"1"
+}127.0.0.1	23-07-2024 03:27:44 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:27:44 PM	{
+    "accountGroup":"2"
+}127.0.0.1	23-07-2024 03:27:44 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:27:44 PM	{
+    "accountGroup":"3"
+}127.0.0.1	23-07-2024 03:27:44 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:27:44 PM	{
+    "accountGroup":"4"
+}127.0.0.1	23-07-2024 03:27:44 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:27:44 PM	{
+    "accountGroup":"5"
+}127.0.0.1	23-07-2024 03:43:25 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:43:25 PM	{
+    "accountGroup":"1"
+}127.0.0.1	23-07-2024 03:43:25 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:43:25 PM	{
+    "accountGroup":"2"
+}127.0.0.1	23-07-2024 03:43:25 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:43:25 PM	{
+    "accountGroup":"3"
+}127.0.0.1	23-07-2024 03:43:25 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:43:25 PM	{
+    "accountGroup":"4"
+}127.0.0.1	23-07-2024 03:43:25 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:43:25 PM	{
+    "accountGroup":"5"
+}127.0.0.1	23-07-2024 03:49:56 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:49:56 PM	{
+    "accountGroup":"1"
+}127.0.0.1	23-07-2024 03:49:56 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:49:56 PM	{
+    "accountGroup":"2"
+}127.0.0.1	23-07-2024 03:49:56 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:49:56 PM	{
+    "accountGroup":"3"
+}127.0.0.1	23-07-2024 03:49:56 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:49:56 PM	{
+    "accountGroup":"4"
+}127.0.0.1	23-07-2024 03:49:56 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:49:56 PM	{
+    "accountGroup":"5"
+}127.0.0.1	23-07-2024 03:50:37 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:50:37 PM	{
+    "name" : "",
+    "accountGroup" : "2",
+    "status" : ""
+}127.0.0.1	23-07-2024 03:50:51 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:50:51 PM	127.0.0.1	23-07-2024 03:50:51 PM	Query to extract the records-----
+SELECT * FROM masters."accountGroupMaster" WHERE true   ORDER BY "Id" ASC127.0.0.1	23-07-2024 03:51:57 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:51:57 PM	127.0.0.1	23-07-2024 03:51:57 PM	Query to extract the records-----
+SELECT * FROM masters."accountGroupMaster" WHERE true   ORDER BY "Id" ASC127.0.0.1	23-07-2024 03:52:52 PM	Entering in Account Group Page127.0.0.1	23-07-2024 03:52:52 PM	{
+    "name" : "",
+    "accountGroup" : "2",
+    "status" : ""
+}127.0.0.1	23-07-2024 04:01:05 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:01:05 PM	127.0.0.1	23-07-2024 04:01:05 PM	Query to extract the records-----
+SELECT * FROM masters."accountGroupMaster" WHERE true   ORDER BY "Id" ASC127.0.0.1	23-07-2024 04:48:52 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:48:52 PM	{
+    "accountGroup":"1"
+}127.0.0.1	23-07-2024 04:48:53 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:48:53 PM	{
+    "accountGroup":"2"
+}127.0.0.1	23-07-2024 04:48:53 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:48:53 PM	{
+    "accountGroup":"3"
+}127.0.0.1	23-07-2024 04:48:53 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:48:53 PM	{
+    "accountGroup":"4"
+}127.0.0.1	23-07-2024 04:48:53 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:48:53 PM	{
+    "accountGroup":"5"
+}127.0.0.1	23-07-2024 04:50:35 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:50:35 PM	{
+    "accountGroup":"1"
+}127.0.0.1	23-07-2024 04:50:35 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:50:35 PM	{
+    "accountGroup":"2"
+}127.0.0.1	23-07-2024 04:50:35 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:50:35 PM	{
+    "accountGroup":"3"
+}127.0.0.1	23-07-2024 04:50:35 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:50:35 PM	{
+    "accountGroup":"4"
+}127.0.0.1	23-07-2024 04:50:35 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:50:35 PM	{
+    "accountGroup":"5"
+}127.0.0.1	23-07-2024 04:51:18 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:51:18 PM	{
+    "accountGroup":"1"
+}127.0.0.1	23-07-2024 04:51:18 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:51:18 PM	{
+    "accountGroup":"2"
+}127.0.0.1	23-07-2024 04:51:18 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:51:18 PM	{
+    "accountGroup":"3"
+}127.0.0.1	23-07-2024 04:51:18 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:51:18 PM	{
+    "accountGroup":"4"
+}127.0.0.1	23-07-2024 04:51:18 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:51:18 PM	{
+    "accountGroup":"5"
+}127.0.0.1	23-07-2024 04:53:24 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:53:24 PM	{
+    "accountGroup":"1"
+}127.0.0.1	23-07-2024 04:53:24 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:53:24 PM	{
+    "accountGroup":"2"
+}127.0.0.1	23-07-2024 04:53:24 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:53:24 PM	{
+    "accountGroup":"3"
+}127.0.0.1	23-07-2024 04:53:24 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:53:24 PM	{
+    "accountGroup":"4"
+}127.0.0.1	23-07-2024 04:53:24 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:53:24 PM	{
+    "accountGroup":"5"
+}127.0.0.1	23-07-2024 04:53:52 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:53:52 PM	{
+    "accountGroup":"1"
+}127.0.0.1	23-07-2024 04:53:52 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:53:52 PM	{
+    "accountGroup":"2"
+}127.0.0.1	23-07-2024 04:53:52 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:53:52 PM	{
+    "accountGroup":"3"
+}127.0.0.1	23-07-2024 04:53:52 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:53:52 PM	{
+    "accountGroup":"4"
+}127.0.0.1	23-07-2024 04:53:52 PM	Entering in Account Group Page127.0.0.1	23-07-2024 04:53:52 PM	{
+    "accountGroup":"5"
+}127.0.0.1	23-07-2024 05:40:14 PM	Entering in Account Group Page127.0.0.1	23-07-2024 05:40:14 PM	{
+    "accountGroup":"1"
+}127.0.0.1	23-07-2024 05:40:14 PM	Entering in Account Group Page127.0.0.1	23-07-2024 05:40:14 PM	{
+    "accountGroup":"2"
+}127.0.0.1	23-07-2024 05:40:14 PM	Entering in Account Group Page127.0.0.1	23-07-2024 05:40:14 PM	{
+    "accountGroup":"3"
+}127.0.0.1	23-07-2024 05:40:14 PM	Entering in Account Group Page127.0.0.1	23-07-2024 05:40:14 PM	{
+    "accountGroup":"4"
+}127.0.0.1	23-07-2024 05:40:14 PM	Entering in Account Group Page127.0.0.1	23-07-2024 05:40:14 PM	{
+    "accountGroup":"5"
+}
