@@ -18,8 +18,7 @@ $status = $dataToExport->Status;
 class clsDataTable
 {
 
-  // public $Id;
-  public $SubLedgerId;
+  public $Id;
   public $AccountName;
   public $SubGroupName;
   public $SubGroupId;
@@ -51,7 +50,7 @@ $getDatafromData = pg_query(OpenCon(), $DataEntryQuery);
 
      $objDataTable = new clsDataTable();
 
-     $objDataTable->SubLedgerId =$dataList['SubLedgerId'];
+     $objDataTable->Id =$dataList['SubLedgerId'];
      $objDataTable->AccountName =$dataList['accountName'];
      $objDataTable->SubGroupName =getSubGroupName($dataList['subGroupId']);
      $objDataTable->SubGroupId =$dataList['subGroupId'];

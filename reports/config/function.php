@@ -826,7 +826,7 @@ return "";
 
 function getSubLedgerId($accountName){
 
-$DataEntryQuery = "SELECT \"SubLedgerId\" FROM panprogres.\"accountNameMaster\" WHERE \"accountName\"='_accName'";
+$DataEntryQuery = "SELECT \"SubLedgerId\" FROM masters.\"accountNameMaster\" WHERE \"accountName\"='_accName'";
 
 $DataEntryQuery =str_replace('_accName',$accountName,$DataEntryQuery);
 
@@ -842,7 +842,7 @@ return "";
 
 function getAccountFromId($accountCode){
 
-$DataEntryQuery = "SELECT \"accountName\" FROM panprogres.\"accountNameMaster\" WHERE \"SubLedgerId\"='_accCode'";
+$DataEntryQuery = "SELECT \"accountName\" FROM masters.\"accountNameMaster\" WHERE \"SubLedgerId\"='_accCode'";
 
 $DataEntryQuery =str_replace('_accCode',$accountCode,$DataEntryQuery);
 
