@@ -17,7 +17,6 @@ MISuploadlogger("Parameter Json \n".$parameterdata);
 class clsDBResponse
 {
   public $Narration;
-  // public $Amount;
   public $Debit;
   public $Credit;
   public $listOfData=array();
@@ -48,8 +47,6 @@ foreach ($inputData->ListOfTransaction as $value) {
 
     $query = ' Insert into vouchers."voucherMaster" ('.$sql_name.') Values ('.$sql_val.') ';
 
-    // print_r($Type);die;
-
     MISuploadlogger("===insert====".$query);
     $misinsert = pg_query(OpenCon(),$query);
     //$misinsert = pg_query($dbconn, $query);
@@ -63,31 +60,6 @@ foreach ($inputData->ListOfTransaction as $value) {
    
   }
 }
-
-  if($inputData->VoucherType == 'CONTRA'){
-  $totalDebit = $value->Debit;
-  $totalCredit = $value->Credit;
-  }
-
-  // if($inputData->debit == 'DEBIT'){
-  // $totalDebit = $value->Amount;
-  // $totalCredit=0;
-  // }
-  // if($inputData->credit == 'CREDIT'){
-  // $totalCredit = $value->Amount;
-  // $totalDebit=0;
-  // }
-
-
-  $sql_name1 = '"AccountName","VoucherNo","Detail","DateAdded","Debit","Credit","Type"';
-
-  $sql_val1 = "'".$value->AccountName."','".$voucherNo."','".$Narration."','".$dateAdded."','".$totalDebit."','".$totalCredit."','".$type."'";
-
-  $query1 = ' Insert into vouchers."voucherMaster" ('.$sql_name1.') Values ('.$sql_val1.') ';
-
-  MISuploadlogger("===insert1====".$query1);
-
-  $misinsert1 = pg_query(OpenCon(),$query1);
 
   $objResponse = new clsDBResponse();
   $objResponse->Amount = $totalAmount;
